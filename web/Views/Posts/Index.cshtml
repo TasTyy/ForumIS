@@ -4,25 +4,36 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Pregled objav</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Ustvari novo</a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Išči po naslovu: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Nazaj</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                Naslov
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Kategorija</a>
             </th>
             <th>
-                Kategorija
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Naslov</a>
             </th>
             <th>
                 Vsebina
             </th>
             <th>
-                Datum objave
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Datum objave</a>
             </th>
             <th>
                 Cas zadnje spremembe
@@ -35,10 +46,10 @@
     var categoryName = item.Kategorija(item.CategoryId);
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => categoryName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Content)

@@ -25,9 +25,39 @@ namespace web.Controllers
         }
 
         // GET: Posts
-        public async Task<IActionResult> Index()
+        /*public async Task<IActionResult> Index()
         {
             return View(await _context.Posts.ToListAsync());
+        }*/
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+            
+            var posts = from s in _context.Posts
+                        select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                posts = posts.Where(s => s.Title.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    posts = posts.OrderByDescending(s => s.Title);
+                    break;
+                case "Date":
+                    posts = posts.OrderBy(s => s.Created);
+                    break;
+                case "date_desc":
+                    posts = posts.OrderByDescending(s => s.Created);
+                    break;
+                default:
+                    posts = posts.OrderBy(s => s.CategoryId);
+                    break;
+            }
+            return View(await posts.AsNoTracking().ToListAsync());
         }
 
         // GET: Posts/Details/5
