@@ -29,10 +29,21 @@ namespace web.Controllers
         {
             return View(await _context.Posts.ToListAsync());
         }*/
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
             ViewData["CurrentFilter"] = searchString;
             
             var posts = from s in _context.Posts
@@ -57,7 +68,10 @@ namespace web.Controllers
                     posts = posts.OrderBy(s => s.CategoryId);
                     break;
             }
-            return View(await posts.AsNoTracking().ToListAsync());
+
+            int pageSize = 6;
+            return View(await PaginatedList<Post>.CreateAsync(posts.AsNoTracking(), pageNumber ?? 1, pageSize));
+            //return View(await posts.AsNoTracking().ToListAsync());
         }
 
         // GET: Posts/Details/5

@@ -1,4 +1,4 @@
-@model IEnumerable<web.Models.Post>
+@model PaginatedList<web.Models.Post>
 
 @{
     ViewData["Title"] = "Index";
@@ -24,16 +24,19 @@
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Kategorija</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Kategorija</a>
+                @*<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Kategorija</a>*@
             </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Naslov</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Naslov</a>
+                @*<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Naslov</a>*@
             </th>
             <th>
                 Vsebina
             </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Datum objave</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Datum objave</a>
+                @*<a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Datum objave</a>*@
             </th>
             <th>
                 Cas zadnje spremembe
@@ -69,3 +72,23 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Nazaj
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Naprej
+</a>
