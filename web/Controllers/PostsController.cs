@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ForumContext _context;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public PostsController(ForumContext context)
+        public PostsController(ForumContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _usermanager = userManager;
         }
 
         // GET: Posts
@@ -44,6 +49,7 @@ namespace web.Controllers
         }
 
         // GET: Posts/Create
+        //[Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -56,8 +62,12 @@ namespace web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Content,Created,LastEdit,CategoryId")] Post post)
         {
+            var trenutniUporabnik = await _usermanager.GetUserAsync(User);
+
             if (ModelState.IsValid)
             {
+                post.Created = DateTime.Now;
+                post.LastEdit = DateTime.Now;
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,6 +76,7 @@ namespace web.Controllers
         }
 
         // GET: Posts/Edit/5
+        //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,6 +108,8 @@ namespace web.Controllers
             {
                 try
                 {
+                    post.Created = post.Created;
+                    post.LastEdit = DateTime.Now;
                     _context.Update(post);
                     await _context.SaveChangesAsync();
                 }
@@ -117,6 +130,7 @@ namespace web.Controllers
         }
 
         // GET: Posts/Delete/5
+        //[Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

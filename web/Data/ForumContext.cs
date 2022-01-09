@@ -1,10 +1,12 @@
 using web.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 namespace web.Data
 {
     //public class ForumContext : IdentityDbContext<ApplicationUser>
-    public class ForumContext : DbContext
+    public class ForumContext : IdentityDbContext<ApplicationUser>
     {
         public ForumContext(DbContextOptions<ForumContext> options) : base(options)
         {

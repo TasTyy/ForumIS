@@ -11,6 +11,7 @@ namespace web.Models
         public DateTime? Created { get; set; }
         public DateTime? LastEdit { get; set; }
         public int CategoryId { get; set; }
+        public ApplicationUser? Owner { get; set; }
 
         //public virtual ICollection<ApplicationUser> ApplicationUsers { get; set; }
         //public virtual ICollection<PostReply> PostReplies { get; set; }
