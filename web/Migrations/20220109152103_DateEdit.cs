@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace web.Migrations
 {
-    public partial class ExtendedPosts : Migration
+    public partial class DateEdit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

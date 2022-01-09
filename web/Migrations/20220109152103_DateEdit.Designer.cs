@@ -12,8 +12,8 @@ using web.Data;
 namespace web.Migrations
 {
     [DbContext(typeof(ForumContext))]
-    [Migration("20220108161247_ExtendedPosts")]
-    partial class ExtendedPosts
+    [Migration("20220109152103_DateEdit")]
+    partial class DateEdit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

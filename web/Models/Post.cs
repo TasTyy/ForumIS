@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace web.Models
 {
@@ -8,7 +9,13 @@ namespace web.Models
         public int Id { get; set; }
         public string? Title { get; set; }
         public string? Content { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yy H:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? Created { get; set; }
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yy H:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? LastEdit { get; set; }
         public int CategoryId { get; set; }
         public ApplicationUser? Owner { get; set; }
