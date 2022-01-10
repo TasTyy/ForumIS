@@ -5,7 +5,8 @@ using web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("ForumContext");
+//var connectionString = builder.Configuration.GetConnectionString("ForumContext");
+//var connectionString = builder.Configuration.GetConnectionString("AzureContext");
 
 /*builder.Services.AddDbContext<ForumContext>(options =>
     options.UseSqlServer(connectionString));*/
@@ -16,8 +17,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+/* builder.Services.AddDbContext<ForumContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("ForumContext"))); */
+
 builder.Services.AddDbContext<ForumContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ForumContext")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
 
 var app = builder.Build();
 

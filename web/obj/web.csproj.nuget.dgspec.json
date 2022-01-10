@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\majko\\Desktop\\Faks\\Letnik 2\\Semester 1\\informacijski sistemi\\ForumIS\\web\\web.csproj": {}
+    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\majko\\Desktop\\Faks\\Letnik 2\\Semester 1\\informacijski sistemi\\ForumIS\\web\\web.csproj": {
+    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\majko\\Desktop\\Faks\\Letnik 2\\Semester 1\\informacijski sistemi\\ForumIS\\web\\web.csproj",
+        "projectUniqueName": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "C:\\Users\\majko\\Desktop\\Faks\\Letnik 2\\Semester 1\\informacijski sistemi\\ForumIS\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\majko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\majko\\Desktop\\Faks\\Letnik 2\\Semester 1\\informacijski sistemi\\ForumIS\\web\\obj\\",
+        "projectPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj",
+        "packagesPath": "C:\\Users\\orvol\\.nuget\\packages\\",
+        "outputPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\majko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\orvol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     }
