@@ -21,11 +21,7 @@ builder.Services.AddControllersWithViews();
             options.UseSqlServer(builder.Configuration.GetConnectionString("ForumContext"))); */
 
 builder.Services.AddDbContext<ForumContext>(options =>
-<<<<<<< HEAD
     options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
-=======
-            options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
->>>>>>> 8f2459e02200a14c35d7ce966332a4bbc7b84c1f
 
 var app = builder.Build();
 
