@@ -17,7 +17,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ForumContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ForumContext")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
 
 var app = builder.Build();
 
