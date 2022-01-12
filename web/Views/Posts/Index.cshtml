@@ -7,14 +7,13 @@
 <h1>Pregled objav</h1>
 
 <p>
-    <a asp-action="Create">Ustvari novo</a>
+    <a asp-action="Create"><button>Ustvari novo</button></a>
 </p>
 
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Išči po naslovu: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
+            Išči po naslovu: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" /><input type="submit" value="Išči"  /> |
             <a asp-action="Index">Nazaj</a>
         </p>
     </div>

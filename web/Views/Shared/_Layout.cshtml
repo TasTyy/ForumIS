@@ -7,12 +7,29 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/css/vendor.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="~/image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="~/image/png" sizes="16x16" href="favicon-16x16.png">
+
 </head>
 <body>
-    <header>
+@*     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ForumIS</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">web</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,14 +40,69 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Objave</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Index">Objave</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
-    </header>
+    </header> *@
+@*     <header>
+        <nav class="s-header">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo" href="index.cshtml">
+                        <img src="~/images/logo.svg" alt="Logo">
+                    </a>
+                </div>
+
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div> <!-- end s-header__block -->
+
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">web</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Index">Objave</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header> *@
+
+<header class="s-header">
+
+
+            <div class="row s-header__nav-wrap">
+                <nav class="s-header__nav">
+                    <ul>
+                        <li class="current">
+                            <a class="smoothscroll" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
+                        </li>
+                        <li>
+                            <a class="smoothscroll" asp-area="" asp-controller="Posts" asp-action="Index">Objave</a>
+                        </li>
+                        <li>
+                            <a class="smoothscroll" asp-area="" asp-controller="Categories" asp-action="Index">Kategorije</a>
+                        </li>
+                    </ul>
+                    <partial class="smoothscroll" name="_LoginPartial" />
+                </nav>
+            </div> <!-- end s-header__nav-wrap -->
+
+        </header> <!-- end s-header -->
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -39,7 +111,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Majko - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Koren & Suhovršnik - <a asp-area="" asp-controller="Home" asp-action="Privacy">Zasebnost</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
