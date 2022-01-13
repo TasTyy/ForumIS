@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
     options.UseSqlServer(connectionString));*/
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ForumContext>();
+    .AddRoles<IdentityRole>().AddEntityFrameworkStores<ForumContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
