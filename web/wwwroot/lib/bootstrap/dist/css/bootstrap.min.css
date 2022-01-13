@@ -1842,7 +1842,7 @@ progress {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -6961,7 +6961,7 @@ fieldset:disabled .btn {
 }
 .pb-3 {
   margin-top:10em;
-  padding-bottom: 1rem !important;
+  padding-bottom: 5em !important;
 }
 .pb-4 {
   padding-bottom: 1.5rem !important;

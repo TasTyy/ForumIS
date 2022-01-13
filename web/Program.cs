@@ -23,6 +23,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ForumContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
 
+builder.Services.AddSwaggerGen();
+
+
 var app = builder.Build();
 
 CreateDbIfNotExists(app);
@@ -39,6 +42,13 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.MapRazorPages();
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+c.SwaggerEndpoint("/swagger/v1/swagger.json", "IS FORUM API V1");
+});
+
 app.UseRouting();
 app.UseAuthentication();
 

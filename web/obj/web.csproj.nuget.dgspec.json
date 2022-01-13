@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj": {}
+    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum3\\ForumIS\\web\\web.csproj": {}
   },
   "projects": {
-    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj": {
+    "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum3\\ForumIS\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj",
+        "projectUniqueName": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum3\\ForumIS\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\web.csproj",
+        "projectPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum3\\ForumIS\\web\\web.csproj",
         "packagesPath": "C:\\Users\\orvol\\.nuget\\packages\\",
-        "outputPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum\\ForumIS\\web\\obj\\",
+        "outputPath": "D:\\FAKS\\2 LETNIK 2021_2022\\IS\\SEMINARSKA\\KoncniForum3\\ForumIS\\web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -62,6 +62,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.0-rc.2.21511.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
