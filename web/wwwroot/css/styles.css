@@ -1884,9 +1884,9 @@ select {
     padding             : var(--input-vpadding) 0 calc(var(--input-vpadding) - 1px);
     border              : 0;
     outline             : 0;
-    color               : var(--color-text-light);
+    color               : black;
     font-family         : var(--font-1);
-    font-size           : calc(var(--text-size) * 0.7778);
+    font-size           : 1em;
     line-height         : var(--input-line-height);
     max-width           : 45%;
     /*background          : transparent;*/
