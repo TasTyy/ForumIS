@@ -6,7 +6,7 @@ Lovro Suhovršnik 63190272
 
 OSNOVNA FUNKCIONALNOST
 
-Gre za spletni forum, za uporabo katerega se mora uporabnik najprej registrirati, nato pa lahko dostopa do objav, jih bere, ter ustvarja. 
+Gre za spletni forum, za uporabo katerega se mora uporabnik najprej registrirati, nato pa lahko dostopa do objav, jih bere, ter ustvarja. Objave so razdeljene v posamezne kategorije oz. teme.
 Brisanje objav je namenjeno administratorjem.
 
 ![image](https://user-images.githubusercontent.com/43537377/149490727-cd66d498-8049-4669-b02a-cb71d5537192.png)
