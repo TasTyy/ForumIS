@@ -1,6 +1,7 @@
 # ForumIS
 
 Maj Koren 63190150
+  
 Lovro Suhovršnik 63190272
 
 OSNOVNA FUNKCIONALNOST
