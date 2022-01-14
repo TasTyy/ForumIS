@@ -21,3 +21,7 @@ Brisanje objav je namenjeno administratorjem.
 
 
 Oba sva skupaj razvijala spletno aplikacijo, nato sma si razdelila zadnji del seminarske naloge sledeče : Lovro Suhovršnik design strani in postavitev APIja, Maj Koren mobilna aplikacija.
+
+
+ER model
+![image](https://user-images.githubusercontent.com/43537377/149500315-c0f768cf-43a4-4364-b2bd-7109620d4c41.png)
